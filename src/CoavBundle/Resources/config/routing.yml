@@ -1,0 +1,7 @@
+coav_planemodel:
+    resource: "@CoavBundle/Resources/config/routing/planemodel.yml"
+    prefix:   /planemodel
+
+coav_homepage:
+    path:     /
+    defaults: { _controller: CoavBundle:Default:index }
