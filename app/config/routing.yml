@@ -5,3 +5,15 @@ coav:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+coav_flight:
+    resource: "@CoavBundle/Resources/config/routing/flight.yml"
+    prefix:   /flight
+
+coav_reservation:
+    resource: "@CoavBundle/Resources/config/routing/reservation.yml"
+    prefix:   /reservation
+
+coav_terrain:
+        resource: "@CoavBundle/Resources/config/routing/terrain.yml"
+        prefix:   /terrain

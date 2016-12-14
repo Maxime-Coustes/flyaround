@@ -164,49 +164,4 @@ class PlaneModel
     {
         return $this->status;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $departures;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->departures = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add departures
-     *
-     * @param \CoavBundle\Entity\Flight $departures
-     * @return PlaneModel
-     */
-    public function addDeparture(\CoavBundle\Entity\Flight $departures)
-    {
-        $this->departures[] = $departures;
-
-        return $this;
-    }
-
-    /**
-     * Remove departures
-     *
-     * @param \CoavBundle\Entity\Flight $departures
-     */
-    public function removeDeparture(\CoavBundle\Entity\Flight $departures)
-    {
-        $this->departures->removeElement($departures);
-    }
-
-    /**
-     * Get departures
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDepartures()
-    {
-        return $this->departures;
-    }
 }

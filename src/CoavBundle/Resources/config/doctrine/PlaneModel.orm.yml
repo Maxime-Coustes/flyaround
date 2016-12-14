@@ -26,3 +26,8 @@ CoavBundle\Entity\PlaneModel:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+    oneToMany:
+        departures:
+          targetEntity: CoavBundle\Entity\Flight
+          mappedBy: departure

@@ -1,0 +1,42 @@
+CoavBundle\Entity\Flight:
+    type: entity
+    table: null
+    repositoryClass: CoavBundle\Repository\FlightRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        arrival:
+            type: string
+            length: '4'
+        pilot:
+            type: string
+            length: 255
+        freeSeats:
+            type: integer
+        takeofTime:
+            type: datetime
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        departure:
+            targetEntity: CoavBundle\Entity\Terrain
+            inversedBy: departures
+
+    oneToMany:
+            departures:
+              targetEntity: CoavBundle\Entity\Terrain
+              mappedBy: departure
+
+    oneToMany:
+        departures:
+          targetEntity: CoavBundle\Entity\Reservation
+          mappedBy: departure
+
+    manyToOne:
+        departure:
+            targetEntity: CoavBundle\Entity\PlaneModel
+            inversedBy: departures

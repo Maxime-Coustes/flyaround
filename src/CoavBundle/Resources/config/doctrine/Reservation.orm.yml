@@ -1,0 +1,27 @@
+CoavBundle\Entity\Reservation:
+    type: entity
+    table: null
+    repositoryClass: CoavBundle\Repository\ReservationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        nbSeats:
+            type: integer
+    lifecycleCallbacks: {  }
+
+    manyToMany:
+        passengers:
+            targetEntity: CoavBundle\Entity\User
+            mappedBy: reservation
+
+    manyToOne:
+        departure:
+            targetEntity: CoavBundle\Entity\Flight
+            inversedBy: departures
