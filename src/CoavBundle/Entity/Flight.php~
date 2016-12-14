@@ -164,4 +164,87 @@ class Flight
     {
         return $this->takeofTime;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $departures;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->departures = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add departures
+     *
+     * @param \CoavBundle\Entity\Terrain $departures
+     * @return Flight
+     */
+    public function addDeparture(\CoavBundle\Entity\Terrain $departures)
+    {
+        $this->departures[] = $departures;
+
+        return $this;
+    }
+
+    /**
+     * Remove departures
+     *
+     * @param \CoavBundle\Entity\Terrain $departures
+     */
+    public function removeDeparture(\CoavBundle\Entity\Terrain $departures)
+    {
+        $this->departures->removeElement($departures);
+    }
+
+    /**
+     * Get departures
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDepartures()
+    {
+        return $this->departures;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $flight;
+
+
+    /**
+     * Add flight
+     *
+     * @param \CoavBundle\Entity\Terrain $flight
+     * @return Flight
+     */
+    public function addFlight(\CoavBundle\Entity\Terrain $flight)
+    {
+        $this->flight[] = $flight;
+
+        return $this;
+    }
+
+    /**
+     * Remove flight
+     *
+     * @param \CoavBundle\Entity\Terrain $flight
+     */
+    public function removeFlight(\CoavBundle\Entity\Terrain $flight)
+    {
+        $this->flight->removeElement($flight);
+    }
+
+    /**
+     * Get flight
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFlight()
+    {
+        return $this->flight;
+    }
 }

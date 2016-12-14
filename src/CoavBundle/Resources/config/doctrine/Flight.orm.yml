@@ -27,16 +27,11 @@ CoavBundle\Entity\Flight:
             inversedBy: departures
 
     oneToMany:
-            departures:
-              targetEntity: CoavBundle\Entity\Terrain
-              mappedBy: departure
-
-    oneToMany:
-        departures:
+        flight:
           targetEntity: CoavBundle\Entity\Reservation
-          mappedBy: departure
+          mappedBy: flight
 
     manyToOne:
-        departure:
+        plane:
             targetEntity: CoavBundle\Entity\PlaneModel
-            inversedBy: departures
+            inversedBy: plane

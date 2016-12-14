@@ -97,4 +97,42 @@ class User
     {
         return $this->reservations;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $user;
+
+
+    /**
+     * Add user
+     *
+     * @param \CoavBundle\Entity\Reservation $user
+     * @return User
+     */
+    public function addUser(\CoavBundle\Entity\Reservation $user)
+    {
+        $this->user[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \CoavBundle\Entity\Reservation $user
+     */
+    public function removeUser(\CoavBundle\Entity\Reservation $user)
+    {
+        $this->user->removeElement($user);
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

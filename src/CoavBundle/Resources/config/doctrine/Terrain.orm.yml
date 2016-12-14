@@ -29,5 +29,5 @@ CoavBundle\Entity\Terrain:
 
     oneToMany:
         departures:
-          targetEntity: CoavBundle\Entity\Terrain
+          targetEntity: CoavBundle\Entity\Flight
           mappedBy: departure

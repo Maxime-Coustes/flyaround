@@ -248,4 +248,42 @@ class Terrain
     {
         return $this->departures;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $terrain;
+
+
+    /**
+     * Add terrain
+     *
+     * @param \CoavBundle\Entity\Flight $terrain
+     * @return Terrain
+     */
+    public function addTerrain(\CoavBundle\Entity\Flight $terrain)
+    {
+        $this->terrain[] = $terrain;
+
+        return $this;
+    }
+
+    /**
+     * Remove terrain
+     *
+     * @param \CoavBundle\Entity\Flight $terrain
+     */
+    public function removeTerrain(\CoavBundle\Entity\Flight $terrain)
+    {
+        $this->terrain->removeElement($terrain);
+    }
+
+    /**
+     * Get terrain
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTerrain()
+    {
+        return $this->terrain;
+    }
 }

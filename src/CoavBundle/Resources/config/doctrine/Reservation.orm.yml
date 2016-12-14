@@ -17,11 +17,10 @@ CoavBundle\Entity\Reservation:
     lifecycleCallbacks: {  }
 
     manyToMany:
-        passengers:
+        reservation:
             targetEntity: CoavBundle\Entity\User
             mappedBy: reservation
 
     manyToOne:
-        departure:
+        flight:
             targetEntity: CoavBundle\Entity\Flight
-            inversedBy: departures

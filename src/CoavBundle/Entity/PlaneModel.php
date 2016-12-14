@@ -209,4 +209,80 @@ class PlaneModel
     {
         return $this->departures;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $PlaneModel;
+
+
+    /**
+     * Add PlaneModel
+     *
+     * @param \CoavBundle\Entity\Flight $planeModel
+     * @return PlaneModel
+     */
+    public function addPlaneModel(\CoavBundle\Entity\Flight $planeModel)
+    {
+        $this->PlaneModel[] = $planeModel;
+
+        return $this;
+    }
+
+    /**
+     * Remove PlaneModel
+     *
+     * @param \CoavBundle\Entity\Flight $planeModel
+     */
+    public function removePlaneModel(\CoavBundle\Entity\Flight $planeModel)
+    {
+        $this->PlaneModel->removeElement($planeModel);
+    }
+
+    /**
+     * Get PlaneModel
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlaneModel()
+    {
+        return $this->PlaneModel;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $plane;
+
+
+    /**
+     * Add plane
+     *
+     * @param \CoavBundle\Entity\Flight $plane
+     * @return PlaneModel
+     */
+    public function addPlane(\CoavBundle\Entity\Flight $plane)
+    {
+        $this->plane[] = $plane;
+
+        return $this;
+    }
+
+    /**
+     * Remove plane
+     *
+     * @param \CoavBundle\Entity\Flight $plane
+     */
+    public function removePlane(\CoavBundle\Entity\Flight $plane)
+    {
+        $this->plane->removeElement($plane);
+    }
+
+    /**
+     * Get plane
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlane()
+    {
+        return $this->plane;
+    }
 }

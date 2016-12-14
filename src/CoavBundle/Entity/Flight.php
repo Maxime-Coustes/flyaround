@@ -209,4 +209,42 @@ class Flight
     {
         return $this->departures;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $flight;
+
+
+    /**
+     * Add flight
+     *
+     * @param \CoavBundle\Entity\Terrain $flight
+     * @return Flight
+     */
+    public function addFlight(\CoavBundle\Entity\Terrain $flight)
+    {
+        $this->flight[] = $flight;
+
+        return $this;
+    }
+
+    /**
+     * Remove flight
+     *
+     * @param \CoavBundle\Entity\Terrain $flight
+     */
+    public function removeFlight(\CoavBundle\Entity\Terrain $flight)
+    {
+        $this->flight->removeElement($flight);
+    }
+
+    /**
+     * Get flight
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFlight()
+    {
+        return $this->flight;
+    }
 }

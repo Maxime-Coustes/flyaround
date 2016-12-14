@@ -28,6 +28,6 @@ CoavBundle\Entity\PlaneModel:
     lifecycleCallbacks: {  }
 
     oneToMany:
-        departures:
+        plane:
           targetEntity: CoavBundle\Entity\Flight
           mappedBy: departure

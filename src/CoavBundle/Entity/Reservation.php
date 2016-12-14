@@ -153,4 +153,70 @@ class Reservation
     {
         return $this->departure;
     }
+    /**
+     * @var \CoavBundle\Entity\Flight
+     */
+    private $flight;
+
+
+    /**
+     * Set flight
+     *
+     * @param \CoavBundle\Entity\Flight $flight
+     * @return Reservation
+     */
+    public function setFlight(\CoavBundle\Entity\Flight $flight = null)
+    {
+        $this->flight = $flight;
+
+        return $this;
+    }
+
+    /**
+     * Get flight
+     *
+     * @return \CoavBundle\Entity\Flight 
+     */
+    public function getFlight()
+    {
+        return $this->flight;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $reservation;
+
+
+    /**
+     * Add reservation
+     *
+     * @param \CoavBundle\Entity\User $reservation
+     * @return Reservation
+     */
+    public function addReservation(\CoavBundle\Entity\User $reservation)
+    {
+        $this->reservation[] = $reservation;
+
+        return $this;
+    }
+
+    /**
+     * Remove reservation
+     *
+     * @param \CoavBundle\Entity\User $reservation
+     */
+    public function removeReservation(\CoavBundle\Entity\User $reservation)
+    {
+        $this->reservation->removeElement($reservation);
+    }
+
+    /**
+     * Get reservation
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getReservation()
+    {
+        return $this->reservation;
+    }
 }

@@ -13,6 +13,6 @@ CoavBundle\Entity\User:
     lifecycleCallbacks: {  }
 
     manyToMany:
-        reservations:
+        user:
             targetEntity: CoavBundle\Entity\Reservation
             inversedBy: passengers
